@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin flip game and Cart Quantity</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button
+      onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+      "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+      if(cartQuantity < 10){
+      cartQuantity++;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else 
+        alert('The cart is full!');
+    "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
+      if(cartQuantity < 10){
+      cartQuantity += 2;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else 
+        alert('The cart is full!');
+    "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+      if(cartQuantity < 10){
+      cartQuantity = cartQuantity + 3;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else 
+        alert('The cart is full!');
+    "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+      if(cartQuantity>0){
+      cartQuantity--;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else  
+      alert('Not enough items in the cart.')
+    "
+    >
+      Remove from cart
+    </button>
+    <button
+      onclick="
+      if(cartQuantity>=2){
+      cartQuantity -= 2;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else  
+      alert('Not enough items in the cart.')
+    "
+    >
+      -2
+    </button>
+    <button
+      onclick="
+      if(cartQuantity>=3){
+      cartQuantity -= 3;
+      console.log(`Cart quantity: ${cartQuantity}`);}
+      else  
+      alert('Not enough items in the cart.')
+    "
+    >
+      -3
+    </button>
+    <button
+      onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      /*
+      const randomNumber = Math.random();
+      let result;
+
+      if (randomNumber <= 0.5) result = "heads";
+      else result = "tails";
+
+      const guess = "heads";
+
+      guess === result ? console.log("You win!") : console.log("You lose!");*/
+
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions Exercise</title>
+  </head>
+  <body>
+    <!--
+    <p>Calculator</p>
+    <p>
+      <button onclick="doCalculation('1');">1</button>
+      <button onclick="doCalculation('2');">2</button>
+      <button onclick="doCalculation('3');">3</button>
+      <button onclick="doCalculation(' + ');">+</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('4');">4</button>
+      <button onclick="doCalculation('5');">5</button>
+      <button onclick="doCalculation('6');">6</button>
+      <button onclick="doCalculation(' - ');">-</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('7');">7</button>
+      <button onclick="doCalculation('8');">8</button>
+      <button onclick="doCalculation('9');">9</button>
+      <button onclick="doCalculation(' * ');">*</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('.');">.</button>
+      <button onclick="doCalculation('0');">0</button>
+      <button onclick="doCalculation(' / ');">/</button>
+      <button onclick="doCalculation('=');">=</button>
+    </p>
+
+    <button onclick="doCalculation('Clear all');">Clear all</button>
+
+    <script>
+      let calculation = "";
+
+      function doCalculation(input) {
+        if (input === "=") calculation = eval(calculation);
+        else if (input === "Clear all") {
+          calculation = "";
+          console.log("Calculations cleared.");
+        } else calculation += input;
+
+        console.log(calculation);
+      }
+    </script>-->
+
+    <!--<script>
+      /*
+      function greet(name = "there!") {
+        console.log(`Hello ${name}`);
+      }
+      greet("Simon");
+      greet("Alok");
+      greet();*/
+
+      /*
+      function convertToFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      function convertToCelsius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      function convertTemperature(degrees, unit) {
+        let answer;
+
+        if (unit === "C") answer = `${convertToFahrenheit(degrees)}F`;
+        else if (unit === "F") answer = `${convertToCelsius(degrees)}C`;
+
+        return answer;
+      }
+
+      console.log(convertTemperature(25, "C"));
+      console.log(convertTemperature(86, "F"));*/
+    </script>-->
+
+    <p>Cart Quantity</p>
+    <button onclick="console.log(`Cart quantity: ${cartQuantity}`);">
+      Show Quantity
+    </button>
+    <button onclick="updateCartQuantity('add',1);">Add to Cart</button>
+    <button onclick="updateCartQuantity('add',2);">+2</button>
+    <button onclick="updateCartQuantity('add',3);">+3</button>
+    <button onclick="updateCartQuantity('remove',1);">Remove from cart</button>
+    <button onclick="updateCartQuantity('remove',2);">-2</button>
+    <button onclick="updateCartQuantity('remove',3);">-3</button>
+    <button
+      onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function updateCartQuantity(operation, numberOfItems) {
+        if (operation === "add") {
+          if (cartQuantity + numberOfItems > 10) {
+            alert("The cart is full!");
+            return;
+          }
+          cartQuantity += numberOfItems;
+          console.log(`Cart quantity: ${cartQuantity}`);
+        } else if (operation === "remove") {
+          if (cartQuantity - numberOfItems < 0) {
+            alert("Not enough items in the cart.");
+            return;
+          }
+          cartQuantity -= numberOfItems;
+          console.log(`Cart quantity: ${cartQuantity}`);
+        }
+      }
+    </script>
+  </body>
+</html>
