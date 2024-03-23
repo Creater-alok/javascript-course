@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+      const product = {
+        name: "Socks",
+        price: 1090,
+      };
+
+      console.log(product); //object
+
+      console.log(product.name); //access a value
+      product.name = "Wollen Socks"; //Modify value
+      console.log(product);
+
+      product.length = "Ankle"; //add a property
+      console.log(product);
+
+      delete product.length; //Delete a property
+      console.log(product);
+      */
+      /*
+      const product2 = {
+        name: "shirt",
+        "delivery-time": "1 day",
+        rating: {
+          stars: 4.5,
+          count: 87,
+        },
+        fun: function f1() {
+          console.log(`hello from function inside object product2.`);
+        },
+      };
+
+
+      console.log(product2.name);
+      console.log(product2["name"]);
+      //console.log(product2.delivery-time);
+      console.log(product2["delivery-" + "time"]);
+      console.log(product2["delivery-time"]);
+
+      console.log(product2.rating.count);
+      console.log(typeof console); //object
+      console.log(typeof console.log); //fuction
+      //function inside object is called method!
+
+      console.log(product2.fun); //gives whole function, writing () exe fn and gives undef
+
+      product2.fun(); //executes the function
+      console.log(typeof Math.random);
+
+      const jsonString = JSON.stringify(product2);
+      console.log(jsonString);
+      console.log(JSON.parse(jsonString));*/
+
+      //Auto-Boxing: Automatically Wraps 'hello' in a special object
+      console.log("hello".toUpperCase());
+      console.log("Alok Kumar".length);
+      console.log((4.55).toString());
+
+      const object = {
+        message: "hello",
+        age: 21,
+      };
+      const obj = object;
+      object.message = "Alok";
+      console.log(object); //Same reference
+      console.log(obj);
+
+      console.log(object === obj); //true
+      const ob1 = {
+        message: "Alok",
+      };
+      console.log(object === ob1); //False - Different refernce
+
+      //const message = object.message;
+      const { message, age } = object;
+      console.log(message + " " + age);
+
+      const num = 12;
+
+      const obj2 = {
+        //message: message,
+        message,
+        num, //Same work as above
+        /*fun: function f1() {
+          console.log("Inside function");
+        },*/
+        fun() {
+          console.log("Inside function");
+        },
+      };
+      console.log(obj2);
+      obj2.fun();
+    </script>
+  </body>
+</html>

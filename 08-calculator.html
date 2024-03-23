@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Calculator and Coin Flip</title>
+  </head>
+  <body>
+    <!--
+    <p>Calculator</p>
+    <p>
+      <button onclick="doCalculation('1');">1</button>
+      <button onclick="doCalculation('2');">2</button>
+      <button onclick="doCalculation('3');">3</button>
+      <button onclick="doCalculation(' + ');">+</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('4');">4</button>
+      <button onclick="doCalculation('5');">5</button>
+      <button onclick="doCalculation('6');">6</button>
+      <button onclick="doCalculation(' - ');">-</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('7');">7</button>
+      <button onclick="doCalculation('8');">8</button>
+      <button onclick="doCalculation('9');">9</button>
+      <button onclick="doCalculation(' * ');">*</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('.');">.</button>
+      <button onclick="doCalculation('0');">0</button>
+      <button onclick="doCalculation(' / ');">/</button>
+      <button onclick="doCalculation('=');">=</button>
+    </p>
+
+    <button onclick="doCalculation('Clear all');">Clear all</button>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+
+      function doCalculation(input) {
+        if (input === "=") calculation = eval(calculation);
+        else if (input === "Clear all") {
+          calculation = "";
+          console.log("Calculations cleared.");
+        } else calculation += input;
+
+        localStorage.setItem("calculation", calculation);
+        console.log(calculation);
+      }
+    </script>-->
+    <button onclick="playGame('heads');">heads</button>
+    <button onclick="playGame('tails');">tails</button>
+    <script>
+      const score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+      };
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        let result;
+
+        if (randomNumber <= 0.5) result = "heads";
+        else result = "tails";
+
+        if (guess === result) {
+          score.wins += 1;
+          console.log("You win!");
+        } else {
+          score.losses += 1;
+          console.log("You lose!");
+        }
+        localStorage.setItem("score", JSON.stringify(score));
+        console.log(score);
+      }
+    </script>
+  </body>
+</html>
