@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Exercises</title>
+  </head>
+  <body>
+    <!--
+    <button>9a</button>
+    <button class="js-button">9b</button>
+    <script>
+      console.log(document.querySelector("button"));
+      document.querySelector(".js-button").innerHTML = "9b done!";
+    </script>-->
+
+    <!--
+    <button onclick="displaySelection('heads')">heads</button>
+    <button onclick="displaySelection('tails')">tails</button>
+    <p class="optionSelected"></p>
+    <script>
+      const result = document.querySelector(".optionSelected");
+
+      function displaySelection(selected) {
+        if (selected === "heads") result.innerHTML = "You chose: heads";
+        else if (selected === "tails") result.innerHTML = "You chose: tails";
+      }
+    </script>-->
+
+    <!--<input placeholder="Name" class="inputName" onkeydown="getName(event)" />
+    <button onclick="displayName();">Submit</button>
+    <p class="displayName"></p>
+    <script>
+      function displayName() {
+        const name = document.querySelector(".inputName").value;
+
+        document.querySelector(
+          ".displayName"
+        ).innerHTML = `Your name is: ${name}`;
+      }
+
+      function getName(event) {
+        if (event.key === "Enter") displayName();
+      }
+    </script>-->
+
+    <!--
+    <input
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="
+        handleCostKeyDown(event);
+      "
+    />
+    <button
+      onclick="
+        calculateTotal();
+      "
+    >
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      function calculateTotal() {
+        let cost = Number(document.querySelector(".js-cost-input").value); //value returns a string
+
+        //To avoid cents error we convert dollars into cents
+        cost *= 100;
+
+        if (cost && cost < 4000) cost += 1000;
+
+        if (cost) {
+          document.querySelector(".js-total-cost").innerHTML = `$${cost / 100}`;
+        }
+      }
+
+      function handleCostKeyDown(event) {
+        if (event.key === "Enter") calculateTotal();
+      }
+    </script>-->
+
+    <!--
+    <input onkeyup="displayText(event);" />
+    <p></p>
+    <script>
+      function displayText(event) {
+        const text = document.querySelector("input").value;
+        document.querySelector("p").innerHTML = text;
+      }
+    </script>-->
+
+    <!--
+    <button onclick="displayCartQuantity();">Show Quantity</button>
+    <button onclick="updateCartQuantity('add',1);">Add to Cart</button>
+    <button onclick="updateCartQuantity('add',2);">+2</button>
+    <button onclick="updateCartQuantity('add',3);">+3</button>
+    <button onclick="updateCartQuantity('remove',1);">Remove from cart</button>
+    <button onclick="updateCartQuantity('remove',2);">-2</button>
+    <button onclick="updateCartQuantity('remove',3);">-3</button>
+    <button
+      onclick="
+      cartQuantity = 0;
+      displayCartQuantity();
+    "
+    >
+      Reset Cart
+    </button>
+    <p class="cartQuantityLabel"></p>
+
+    <script>
+      let cartQuantity = 0;
+      displayCartQuantity();
+
+      function updateCartQuantity(operation, numberOfItems) {
+        if (operation === "add") {
+          if (cartQuantity + numberOfItems > 10) {
+            alert("The cart is full!");
+            return;
+          }
+          cartQuantity += numberOfItems;
+          //console.log(`Cart quantity: ${cartQuantity}`);
+        } else if (operation === "remove") {
+          if (cartQuantity - numberOfItems < 0) {
+            alert("Not enough items in the cart.");
+            return;
+          }
+          cartQuantity -= numberOfItems;
+          //console.log(`Cart quantity: ${cartQuantity}`);
+        }
+
+        displayCartQuantity();
+      }
+
+      function displayCartQuantity() {
+        document.querySelector(
+          ".cartQuantityLabel"
+        ).innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+    </script>-->
+
+    <p class="calculation-output"></p>
+    <p>
+      <button onclick="doCalculation('1');">1</button>
+      <button onclick="doCalculation('2');">2</button>
+      <button onclick="doCalculation('3');">3</button>
+      <button onclick="doCalculation(' + ');">+</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('4');">4</button>
+      <button onclick="doCalculation('5');">5</button>
+      <button onclick="doCalculation('6');">6</button>
+      <button onclick="doCalculation(' - ');">-</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('7');">7</button>
+      <button onclick="doCalculation('8');">8</button>
+      <button onclick="doCalculation('9');">9</button>
+      <button onclick="doCalculation(' * ');">*</button>
+    </p>
+    <p>
+      <button onclick="doCalculation('.');">.</button>
+      <button onclick="doCalculation('0');">0</button>
+      <button onclick="doCalculation(' / ');">/</button>
+      <button onclick="doCalculation('=');">=</button>
+    </p>
+
+    <button onclick="doCalculation('Clear all');">Clear all</button>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+
+      displayCalculation();
+
+      function doCalculation(input) {
+        if (input === "=") calculation = eval(calculation);
+        else if (input === "Clear all") {
+          calculation = "";
+          console.log("Calculations cleared.");
+        } else calculation += input;
+
+        localStorage.setItem("calculation", calculation);
+        displayCalculation();
+      }
+
+      function displayCalculation() {
+        document.querySelector(".calculation-output").innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>
