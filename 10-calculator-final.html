@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <link rel="stylesheet" href="styles/10-calculator-final.css" />
+  <body>
+    <p class="calculation-output output"></p>
+    <p>
+      <button class="calculator-button numbers" onclick="doCalculation('1');">
+        1
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('2');">
+        2
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('3');">
+        3
+      </button>
+      <button
+        class="calculator-button operations"
+        onclick="doCalculation(' + ');"
+      >
+        +
+      </button>
+    </p>
+    <p>
+      <button class="calculator-button numbers" onclick="doCalculation('4');">
+        4
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('5');">
+        5
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('6');">
+        6
+      </button>
+      <button
+        class="calculator-button operations"
+        onclick="doCalculation(' - ');"
+      >
+        -
+      </button>
+    </p>
+    <p>
+      <button class="calculator-button numbers" onclick="doCalculation('7');">
+        7
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('8');">
+        8
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('9');">
+        9
+      </button>
+      <button
+        class="calculator-button operations"
+        onclick="doCalculation(' * ');"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button class="calculator-button numbers" onclick="doCalculation('.');">
+        .
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('0');">
+        0
+      </button>
+      <button class="calculator-button numbers" onclick="doCalculation('=');">
+        =
+      </button>
+      <button
+        class="calculator-button operations"
+        onclick="doCalculation(' / ');"
+      >
+        /
+      </button>
+    </p>
+
+    <button
+      class="calculator-button numbers clear-button"
+      onclick="doCalculation('Clear all');"
+    >
+      Clear
+    </button>
+
+    <script src="scripts/10-calculator-final.js"></script>
+  </body>
+</html>

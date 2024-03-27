@@ -1,0 +1,62 @@
+.add-to-cart-button {
+  border: none;
+  background-color: rgb(255, 216, 20);
+  padding: 10px 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.request-now-button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.schedule-later-button {
+  border: none;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.button-off {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-on {
+  background-color: black;
+  color: white;
+}
+
+.body {
+  font-family: Arial;
+}
+
+.cost-input {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.calculate-button {
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 12px 15px;
+  cursor: pointer;
+}
+
+.error_message {
+  color: red;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML, CSS and JavaScript</title>
+    <link rel="stylesheet" href="styles/10-Zexercises.css" />
+  </head>
+  <body>
+    <!--
+    <button class="add-to-cart-button">Add to Cart</button>
+    <br />
+    <button class="request-now-button">Request now</button>
+    <button class="schedule-later-button">Schedule for later</button>-->
+
+    <!--
+    <button class="js-button">Test</button>
+    <script>
+      console.log(
+        document.querySelector(".js-button").classList.contains("js-button")
+      );
+    </script>-->
+
+    <!--
+    <button class="js-button button-off" onclick="reverseStatus('js-button');">
+      Gaming
+    </button>
+    <button
+      class="music-button button-off"
+      onclick="reverseStatus('music-button');"
+    >
+      Music
+    </button>
+    <button
+      class="tech-button button-off"
+      onclick="reverseStatus('tech-button');"
+    >
+      Tech
+    </button>-->
+
+    <input
+      placeholder="Cost of order"
+      class="js-cost-input cost-input"
+      onkeydown="
+        handleCostKeyDown(event);
+      "
+    />
+    <button
+      class="calculate-button"
+      onclick="
+        calculateTotal();
+      "
+    >
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
+    <script src="scripts/10-Zexercises.js"></script>
+  </body>
+</html>
