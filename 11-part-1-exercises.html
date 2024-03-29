@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Part 1 Exercises</title>
+  </head>
+  <body>
+    <script>
+      const nums = [10, 20, 30];
+      /*nums[nums.length - 1] = 99;
+      console.log(nums);
+
+      function getLastValue(array) {
+        return array[array.length - 1];
+      }
+      console.log(getLastValue(["hi", "hello", "good"]));*/
+
+      /*
+      function arraySwap(array) {
+        const lastValue = array[array.length - 1];
+        const firstValue = array[0];
+
+        array[array.length - 1] = firstValue;
+        array[0] = lastValue;
+      }
+      arraySwap(nums);
+      console.log(nums);*/
+
+      /*
+      let i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i += 2;
+      }
+      i = 5;
+      while (i >= 0) {
+        console.log(i);
+        i--;
+      }*/
+
+      /*
+      const array = [-2, -1, 0, 99];
+
+      function addOne(array) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+          result.push(array[i] + 1);
+        }
+        console.log(result);
+      }
+      addOne(array);*/
+
+      /*
+      addNum([-2, -1, 0, 99], 2);
+      function addNum(array, num) {
+        for (let i = 0; i < array.length; i++) {
+          array[i] += num;
+        }
+        console.log(array);
+      }
+
+      function addArrays(array1, array2) {
+        const result = [];
+        for (let i = 0; i < array1.length; i++) {
+          result[i] = array1[i] + array2[i];
+        }
+        console.log(result);
+      }
+
+      function countPositive(nums) {
+        let count = 0;
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] > 0) count++;
+        }
+        console.log(count);
+      }
+
+      addArrays([1, 2, 3], [4, 5, 6]);
+      countPositive([-2, 3, -5, 7, 10]);*/
+
+      /*
+      function minMax(array) {
+        const maxMinObject =
+          array.length != 0
+            ? {
+                min: array[0],
+                max: array[0],
+              }
+            : {
+                min: null,
+                max: null,
+              };
+
+        for (let i = 1; i < array.length; i++) {
+          if (maxMinObject.max < array[i]) {
+            maxMinObject.max = array[i];
+          }
+          if (maxMinObject.min > array[i]) {
+            maxMinObject.min = array[i];
+          }
+        }
+
+        console.log(maxMinObject);
+      }
+
+      minMax([3]);*/
+
+      function countWords(words) {
+        const count = {};
+        for (let i = 0; i < words.length; i++) {
+          if (count[words[i]]) {
+            count[words[i]] += 1;
+          } else {
+            count[words[i]] = 1;
+          }
+        }
+
+        console.log(count);
+      }
+      countWords(["apple", "grape", "apple", "apple"]);
+    </script>
+  </body>
+</html>

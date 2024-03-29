@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions Exercise</title>
+  </head>
+  <body>
+    <!--
+    <button
+      class="js-button"
+      onclick="
+      const buttonElement =  document.querySelector('.js-button');
+      setTimeout(function () {
+       buttonElement.innerHTML = 'Finished!';
+      }, 1000);
+      buttonElement.innerHTML = 'Loading...';
+    "
+    >
+      Start
+    </button>
+
+    <button class="add-to-cart-button" onclick="displayMessage()">
+      Add to cart
+    </button>
+    <p class="added-message"></p>-->
+
+    <button onclick="messageCount++;">Add</button>
+    <button
+      onclick="
+      if(messageCount > 0){
+        messageCount--;
+      }
+    "
+    >
+      Remove
+    </button>
+
+    <script>
+      /*
+      const add = function () {
+        console.log(2 + 3);
+      };
+
+      add();
+      add();
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(function () {
+        console.log("12b");
+      });
+      runTwice(add);*/
+
+      /*
+      let clicked = false;
+      let timeoutID;
+
+      const messageDisplay = document.querySelector(".added-message");
+
+      function displayMessage() {
+        if (clicked) {
+          clearTimeout(timeoutID);
+        }
+        timeoutID = setTimeout(function () {
+          messageDisplay.innerHTML = "";
+          clicked = false;
+        }, 2000);
+        messageDisplay.innerHTML = "Added";
+        clicked = true;
+      }*/
+      let messageCount = 2;
+
+      setInterval(function () {
+        if (messageCount > 0 && document.title === "App")
+          document.title = `(${messageCount}) New messages`;
+        else document.title = "App";
+      }, 1000);
+
+      document.title = "App";
+
+      clearInterval();
+    </script>
+  </body>
+</html>

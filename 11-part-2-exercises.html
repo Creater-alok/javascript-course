@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Part 2 Exercises</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function findIndex(array, word) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            index = i;
+            break;
+          }
+        }
+
+        console.log(index);
+      }
+
+      findIndex(["green", "red", "blue", "red"], "red");
+      findIndex(["green", "red", "blue", "red"], "yellow");*/
+
+      /*
+      function removeEgg(foods) {
+        const resultArray = [];
+        let count = 0;
+        for (let i = 0; i < foods.length; i++) {
+          if (count < 2 && foods[i] === "egg") {
+            count++;
+            continue;
+          }
+          resultArray.push(foods[i]);
+        }
+        return resultArray.reverse();
+      }
+
+      const foods = ["egg", "apple", "egg", "egg", "ham"];
+      const foodsReverse = foods.slice();
+      foodsReverse.reverse();
+      console.log(removeEgg(foodsReverse));
+      console.log(foods);*/
+
+      /*
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 !== 0) console.log("Fizz");
+        else if (i % 5 === 0 && i % 3 !== 0) console.log("Buzz");
+        else if (i % 3 === 0 && i % 5 === 0) console.log("FizzBuzz");
+        else console.log(i);
+      }*/
+
+      function findIndex(array, word) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            index = i;
+            break;
+          }
+        }
+
+        return index;
+      }
+
+      function unique(array) {
+        const resultArray = [];
+        for (let i = 0; i < array.length; i++) {
+          //checks is it first occurrence of duplicate
+          //if (i == findIndex(array, array[i]))
+          if (findIndex(resultArray, array[i]) === -1)
+            resultArray.push(array[i]);
+        }
+        return resultArray;
+      }
+      console.log(unique(["green", "red", "green", "red"]));
+    </script>
+  </body>
+</html>
