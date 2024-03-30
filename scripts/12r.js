@@ -30,15 +30,37 @@ document.querySelector('.js-paper-button').addEventListener('click',()=>playGame
 
 document.querySelector('.js-scissors-button').addEventListener('click',()=>playGame('scissors'));
 
-document.querySelector('.js-reset-score-button').addEventListener('click',()=>{
+const message = document.querySelector('.js-confirmation-message');
+
+function confirmReset(){
+  message.innerHTML = `
+    Are you sure you want to reset the score?
+    <button onclick="
+      resetScore();
+      message.innerHTML = '';
+    "
+    >Yes</button>
+    <button onclick="
+      message.innerHTML = '';
+    ">No</button>
+  `;
+}
+
+const resetScore = ()=>{
   score.wins = 0;
   score.losses = 0;
   score.ties =  0;
   localStorage.removeItem('score');
   updateScoreElement();
-});
+};
+
+document.querySelector('.js-reset-score-button').addEventListener('click',()=>confirmReset());
 
 document.querySelector('.js-auto-play-button').addEventListener('click',()=>autoPlay());
+
+document.querySelector('.js-auto-play-button').addEventListener('click',()=>{
+  document.querySelector('.js-auto-play-button').innerHTML = isAutoPlaying ? 'Stop Playing' : 'Auto Play';
+});
 
 document.body.addEventListener('keydown',(event) => {
   //console.log(event.key);
@@ -48,6 +70,10 @@ document.body.addEventListener('keydown',(event) => {
     playGame('paper');
   else if(event.key === 's')
     playGame('scissors');
+  else if(event.key === 'a')
+    autoPlay();
+  else if(event.key === 'Backspace')
+    confirmReset(); 
 });
 
 function playGame(userMove) {
